@@ -1,0 +1,5 @@
+package com.carmona.app.api.models;
+
+public class Amortizacion {
+
+}

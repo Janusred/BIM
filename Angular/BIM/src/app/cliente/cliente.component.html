@@ -1,0 +1,60 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div *ngFor="let c of cliente" class="col-sm-5">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Nombre: {{c.nombre}} {{c.paterno}} {{c.materno}}</h5>
+          <p class="card-text">Fecha de Nac {{c.fnacimiento  | date:'dd-MM-yyyy'}}</p>
+          <p class="card-text">RFC: {{c.rfc}}</p>
+          <a href="#" class="btn btn-primary">Tipo de crédito</a>
+          <hr>
+          <div class="table-responsive">
+            <table class="table table-bordered w-100">
+              <thead>
+                <tr>
+                  <th>Credito</th>
+                  <th>importe</th>
+                  <th>Plazo(meses)</th>
+                  <th>Plazo(meses)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let p of credito">
+                  <td>{{p.ncredito}}</td>
+                  <td>${{p.importec}}</td>
+                  <td>${{p.plazo}}</td>
+                  <td>${{p.tazaanual}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+<hr>
+            <div class="table-responsive">
+              <table class="table table-bordered w-100">
+                <thead>
+                  <tr>
+                    <th>Capital amortizado por periodo</th>
+                    <th>Interes del periodo</th>
+                    <th>Numero de pago</th>
+                    <th>Numero de pago(meses)</th>
+                    <th>Saldo insoluto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let a of amort">
+                    <td>{{a.capitalPeriodo}}</td>
+                    <td>${{a.interesPeriodo}}</td>
+                    <td>${{a.npago}}</td>
+                    <td>${{a.pagomes}}</td>
+                    <td>{{a.saldoInsoluto}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>

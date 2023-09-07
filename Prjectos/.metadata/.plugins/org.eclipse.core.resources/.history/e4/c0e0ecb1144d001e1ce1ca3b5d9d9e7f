@@ -1,0 +1,5 @@
+package com.carmona.app.api.dao;
+
+public interface ICredito {
+
+}

@@ -1,0 +1,56 @@
+package com.carmona.app.api.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.carmona.app.api.dao.IAmortizacion;
+import com.carmona.app.api.dao.ICredito;
+import com.carmona.app.api.models.Amortizacion;
+import com.carmona.app.api.models.Credito;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+@Service
+public class AmortizacionService implements IService<Amortizacion, Amortizacion> {
+
+	
+	
+	
+	
+	@Autowired
+	private IAmortizacion amortDao;
+	
+	@Override
+	public List<Amortizacion> listar() {
+		// TODO Auto-generated method stub
+		return (List<Amortizacion>) this.amortDao.findAll();
+	}
+
+	@Override
+	public Optional<Amortizacion> getById(Long id) {
+		// TODO Auto-generated method stub
+		return this.amortDao.findById(id);
+	}
+
+	@Override
+	public void guardar(Amortizacion t) {
+		// TODO Auto-generated method stub
+		this.amortDao.save(t);
+	}
+
+	@Override
+	public void eliminar(Long id) {
+		// TODO Auto-generated method stub
+		this.amortDao.deleteById(id);
+	}
+
+	
+	
+	
+}

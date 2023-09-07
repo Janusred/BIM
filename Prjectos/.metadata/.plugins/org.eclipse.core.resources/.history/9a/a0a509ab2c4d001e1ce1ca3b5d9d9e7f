@@ -1,0 +1,93 @@
+package com.carmona.app.api.models;
+
+import java.util.Date;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+
+
+@Table(name="credito")
+@Entity
+
+public class Credito {
+	@Column(name="id")
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CUST_SEQ")
+	@SequenceGenerator(sequenceName = "customer_seq2", allocationSize = 1, name = "CUST_SEQ2")
+	private Long id;
+	
+	@Column(name="ncredito")
+	private Long ncredito;
+	
+	@Column(name="importec")
+	private Float importec;
+	
+	@Column(name="plazo")
+	private Long plazo;
+	
+	@Column(name="tazaanual")
+	private Float tazaanual;
+	
+	
+	@JoinColumn(name="cliente_id")
+	@ManyToOne
+	private Clientes ncliente;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getNcredito() {
+		return ncredito;
+	}
+
+	public void setNcredito(Long ncredito) {
+		this.ncredito = ncredito;
+	}
+
+	public Float getImportec() {
+		return importec;
+	}
+
+	public void setImportec(Float importec) {
+		this.importec = importec;
+	}
+
+	public Long getPlazo() {
+		return plazo;
+	}
+
+	public void setPlazo(Long plazo) {
+		this.plazo = plazo;
+	}
+
+	public Float getTazaanual() {
+		return tazaanual;
+	}
+
+	public void setTazaanual(Float tazaanual) {
+		this.tazaanual = tazaanual;
+	}
+
+	public Cliente getNcliente() {
+		return ncliente;
+	}
+
+	public void setNcliente(Cliente ncliente) {
+		this.ncliente = ncliente;
+	}
+	
+	
+}
